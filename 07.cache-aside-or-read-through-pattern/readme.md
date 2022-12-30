@@ -29,6 +29,7 @@ Response:
 
 
 Steps:
-1. When we pass ProductId to get the Product Info, it first lookup into redis cache and if data present then it will be return back to client.
-2. When we pass ProductId to get the Product Info, it first lookup into redis cache and if data not present then it will go to PostgresDB, before returning back to client, it updates redis.
-3. When we update the Product details, it removes Product details from cache and update the db.
+- It is enabled when the property cache.enabled is set to true.
+- It simply extends the NoCache service.
+- When we receive the GET request, we would first check the cache, if it is present, we would simply return it. Otherwise, we would query the DB and store in the cache for future use.
+- When we receive any PUT/PATCH/DELETE request, we would update the DB first and then we clear the cache immediately. This is important. Otherwise we would serve stale data.
