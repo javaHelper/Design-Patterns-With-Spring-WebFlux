@@ -24,6 +24,10 @@ Response:
 }
 ````
 
+<img width="889" alt="Screenshot 2022-12-30 at 11 18 27 PM" src="https://user-images.githubusercontent.com/54174687/210098781-5c12717c-ef58-47e1-9289-e7b6779bc5f6.png">
+
+
+
 Steps:
 1. When we pass ProductId to get the Product Info, it first lookup into redis cache and if data present then it will be return back to client.
 2. When we pass ProductId to get the Product Info, it first lookup into redis cache and if data not present then it will go to PostgresDB, before returning back to client, it updates redis.
