@@ -1,5 +1,9 @@
 # Aggregator Pattern
 
+
+![Aggregator-pattern](https://user-images.githubusercontent.com/54174687/210040019-91187223-c134-4051-96b8-d6c5972307b7.png)
+
+
 ````
 http://localhost:8080/aggregate/product/2
 ````
