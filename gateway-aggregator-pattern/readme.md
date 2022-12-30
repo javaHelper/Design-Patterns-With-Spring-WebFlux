@@ -1,6 +1,6 @@
 # Aggregator Pattern
 
-WebClient call will be performed all in parallel. 
+WebClient call will be performed all in parallel. So in this section, we were mostly looking into the gateway aggregator, but so the main purpose of this is to hide the backend complexity and that acts like a facade for that land. It receives the request from the client and calls all the upstream aggregates and send it back to that
 
 To Simulate the whether WebClient works parallely, use `java -jar external-services-v2.jar --sec01.delay.response=3000` and star the app.
 
