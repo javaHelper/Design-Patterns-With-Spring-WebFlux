@@ -1,7 +1,10 @@
 # Aggregator Pattern
 
+WebClient call will be performed all in parallel. 
 
-![Aggregator-pattern](https://user-images.githubusercontent.com/54174687/210040019-91187223-c134-4051-96b8-d6c5972307b7.png)
+To Simulate the whether WebClient works parallely, use `java -jar external-services-v2.jar --sec01.delay.response=3000` and star the app.
+
+![Aggregator-pattern](https://user-images.githubusercontent.com/54174687/210042083-95c155c4-c371-488a-acdd-5b571713bd4c.png)
 
 
 ````
