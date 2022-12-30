@@ -83,3 +83,7 @@ Response:
     ]
 }
 ````
+
+We've safely handled all the conditions in Product-service, Promotion-Service and Review-Service. For ex:
+
+`http://localhost:8080/aggregate/product/51` - This nothing will return.
