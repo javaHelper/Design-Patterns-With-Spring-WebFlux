@@ -7,7 +7,7 @@ When somebody is updating the product details, we're intentionally deleting it f
 
 ----
 
-HTTP GET 
+# HTTP GET 
 
 ```
 http://localhost:8080/product/100
@@ -33,3 +33,40 @@ Steps:
 - It simply extends the NoCache service.
 - When we receive the GET request, we would first check the cache, if it is present, we would simply return it. Otherwise, we would query the DB and store in the cache for future use.
 - When we receive any PUT/PATCH/DELETE request, we would update the DB first and then we clear the cache immediately. This is important. Otherwise we would serve stale data.
+
+-------
+
+# HTTP PATCH
+
+```sh
+curl --location --request PATCH 'http://localhost:8080/product/99' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 99,
+    "description": "Product99 - Updates",
+    "price": 99,
+    "quantityAvailable": 99
+}'
+```
+
+Response: 200 OK
+
+```sh
+http://localhost:8080/product/99
+```
+
+Response:
+
+```json
+{
+    "id": 99,
+    "description": "Product99 - Updates",
+    "price": 99,
+    "quantityAvailable": 99
+}
+```
+
+<img width="989" alt="Screenshot 2022-12-31 at 11 29 26 AM" src="https://user-images.githubusercontent.com/54174687/210126820-2511d6d5-34d4-4604-9687-dfab9f5cc155.png">
+
+
+
