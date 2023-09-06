@@ -32,7 +32,8 @@ Provides the list of Review for the given product id. 70% of the requests will f
 ````
 
 Executes below endpoint few times to see the above logs 
-````sh
+
+````shell
 http://localhost:8080/sec07/product/1
 ````
 
