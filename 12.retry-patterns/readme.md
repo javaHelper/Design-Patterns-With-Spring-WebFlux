@@ -3,7 +3,7 @@
 - Review Service: 
 Provides the list of Review for the given product id. 70% of the requests will fail. Each requests take up to 30ms
 
-````
+````logs
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -32,11 +32,11 @@ Provides the list of Review for the given product id. 70% of the requests will f
 ````
 
 Executes below endpoint few times to see the above logs 
-````
+````sh
 http://localhost:8080/sec07/product/1
 ````
 
-````
+````json
 {
     "id": 1,
     "category": "Computers",
@@ -98,4 +98,33 @@ http://localhost:8080/sec07/product/1
         }
     ]
 }
+
+-------
+
+When Product Not Found
+
+```
+http://localhost:8080/sec07/product/100
+```
+
+
+
+
+````logs
+/\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.4)
+
+2023-09-06 21:38:36.094  INFO 68677 --- [           main] c.v.e.ExternalServicesApplication        : Starting ExternalServicesApplication v0.0.1-SNAPSHOT using Java 11.0.13 on Prateeks-MacBook-Pro.local with PID 68677 (/Users/prats/Downloads/external-services-v2.jar started by prateekashtikar in /Users/prats/Downloads)
+2023-09-06 21:38:36.102  INFO 68677 --- [           main] c.v.e.ExternalServicesApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-09-06 21:38:43.490  INFO 68677 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 7070
+2023-09-06 21:38:44.884  INFO 68677 --- [           main] c.v.e.ExternalServicesApplication        : Started ExternalServicesApplication in 10.118 seconds (JVM running for 11.292)
+2023-09-06 21:39:55.579  WARN 68677 --- [ctor-http-nio-3] c.v.e.s.retry.service.ReviewService7     : 404 - product 100 not found
+2023-09-06 21:39:57.603  WARN 68677 --- [ctor-http-nio-4] c.v.e.s.retry.service.ReviewService7     : 404 - product 100 not found
+2023-09-06 21:39:58.032  WARN 68677 --- [ctor-http-nio-6] c.v.e.s.retry.service.ReviewService7     : 404 - product 100 not found
+2023-09-06 21:39:58.311  WARN 68677 --- [ctor-http-nio-8] c.v.e.s.retry.service.ReviewService7     : 404 - product 100 not found
+2023-09-06 21:39:58.668  WARN 68677 --- [ctor-http-nio-2] c.v.e.s.retry.service.ReviewService7     : 404 - product 100 not found
 ````
