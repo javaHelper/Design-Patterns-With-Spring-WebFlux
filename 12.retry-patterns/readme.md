@@ -37,6 +37,7 @@ Executes below endpoint few times to see the above logs
 http://localhost:8080/sec07/product/1
 ````
 
+
 ````json
 {
     "id": 1,
@@ -99,7 +100,7 @@ http://localhost:8080/sec07/product/1
         }
     ]
 }
-```
+````
 
 -------
 
